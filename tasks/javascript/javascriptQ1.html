@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function wordreverse(word) {
+            let reveseword = ""
+            for (let i = word.length - 1; i >= 0; i--) {
+                reveseword += word[i];
+            }
+            return reveseword;
+        }
+        function sentencerevese(sentence) {
+            let word = "";
+            let revesesentence = "";
+            for (let i = 0; i < sentence.length; i++)  {
+                if (sentence[i] !== " ") {
+                    word += sentence[i];
+                }
+                else {
+                    revesesentence += wordreverse(word) + " "
+                    word = "";
+                }
+            }
+
+            if (word !== "") {
+                revesesentence += wordreverse(word);
+            }
+            return revesesentence;
+
+        }
+        let sentence = "This is not good"
+        let abc = sentencerevese(sentence);
+        console.log(abc);
+        document.write(abc)
+
+
+    </script>
+</body>
+
+</html>
